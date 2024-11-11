@@ -4,7 +4,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
-| <a name="requirement_argocd"></a> [argocd](#requirement\_argocd) | >= 6 |
+| <a name="requirement_argocd"></a> [argocd](#requirement\_argocd) | >= 7 |
 
 ## Providers
 
