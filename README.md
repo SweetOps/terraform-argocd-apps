@@ -36,12 +36,12 @@ module "app" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
-| <a name="requirement_argocd"></a> [argocd](#requirement\_argocd) | >= 6 |
+| <a name="requirement_argocd"></a> [argocd](#requirement\_argocd) | >= 7 |
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_argocd"></a> [argocd](#provider\_argocd) | >= 6 |
+| <a name="provider_argocd"></a> [argocd](#provider\_argocd) | >= 7 |
 ## Modules
 
 | Name | Source | Version |
@@ -52,7 +52,7 @@ module "app" {
 
 | Name | Type |
 |------|------|
-| [argocd_application.apps](https://registry.terraform.io/providers/oboukili/argocd/latest/docs/resources/application) | resource |
+| [argocd_application.apps](https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/application) | resource |
 ## Inputs
 
 | Name | Description | Type | Default | Required |
