@@ -1,5 +1,8 @@
 name: PR title conformance
 
+permissions:
+  pull-requests: write
+
 on:
   pull_request_target:
     types:
@@ -27,6 +30,7 @@ jobs:
             test
             chore
           requireScope: false
+          wip: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
