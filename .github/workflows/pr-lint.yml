@@ -1,8 +1,5 @@
 name: PR title conformance
 
-permissions:
-  pull-requests: write
-
 on:
   pull_request_target:
     types:
@@ -30,41 +27,8 @@ jobs:
             test
             chore
           requireScope: false
-          wip: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Set status check for lint result
-        if: failure()
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const context = github.context;
-            await github.repos.createCommitStatus({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              sha: context.sha,
-              state: 'failure',
-              context: 'Semantic Pull Request',
-              description: 'PR title does not conform to conventional commits'
-            });
-
-      - name: Set status check for success
-        if: success()
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const context = github.context;
-            await github.repos.createCommitStatus({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              sha: context.sha,
-              state: 'success',
-              context: 'Semantic Pull Request',
-              description: 'PR title conforms to conventional commits'
-            });
 
       - name: Comment for PR title conformance
         if: failure()
